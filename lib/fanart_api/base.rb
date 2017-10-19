@@ -4,7 +4,10 @@ class FanartApi::Base
   include ServiceApi::BaseFaraday
 
   def api_key_options
-    { api_key: @config[:api_key] }
+    {
+      api_key: @config[:api_key],
+      client_key: @config[:client_key]
+    }
   end
 
   def path_with_params(path, options)
